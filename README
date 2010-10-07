@@ -1,0 +1,36 @@
+split++: splits and join strings from C++
+
+author: Erik Garrison <erik.garrison@gmail.com>
+
+
+overview:
+
+split++ provides just the most useful string manipulation functions which C++
+never had-- split and join-- in the form of two easily-manageable header files.
+
+
+provided functions:
+
+split.h:
+
+// split a string on a single delimiter character (delim)
+std::vector<std::string>& split(const std::string &s, char delim, std::vector<std::string> &elems);
+std::vector<std::string>  split(const std::string &s, char delim);
+
+// split a string on any character found in the string of delimiters (delims)
+std::vector<std::string>& split(const std::string &s, const std::string& delims, std::vector<std::string> &elems);
+std::vector<std::string>  split(const std::string &s, const std::string& delims);
+
+join.h:
+
+// join a vector of elements by a delimiter object.  ostream<< must be defined
+// for both class S and T and an ostream, as it is e.g. in the case of strings
+// and character arrays
+template<class S, class T>
+std::string join(S& delim, std::vector<T>& elems);
+
+
+usage:
+
+See splittest.cpp and jointest.cpp for example usage.  To use, simply include
+split.h or join.h in your C++ project.

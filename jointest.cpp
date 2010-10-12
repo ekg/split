@@ -11,6 +11,6 @@ int main(void) {
     s.push_back("will");
     s.push_back("be");
     s.push_back("joined");
-    cout << join("|", s) << endl;
+    cout << join(s, "|") << endl;
     return 0;
 }
